@@ -1,0 +1,15 @@
+.gallery {
+    margin: 5px;
+    float: left;
+  }
+  .list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-width: 2px;
+    
+  }
+ .gallery img {
+    width: 360px;
+    height: 300px;
+  }
