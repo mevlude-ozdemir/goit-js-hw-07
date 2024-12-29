@@ -3,18 +3,19 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
 function createBoxes(amount) {
   const boxesContainer = document.getElementById("boxes");
   boxesContainer.innerHTML = "";
-
+  const boxes = [];
+  let size = 30;
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
-    const size = 30 + i * 10; 
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
+    boxes.push(box);
+    size += 10;
+    boxesContainer.append(...boxes);
   }
 }
 
@@ -35,3 +36,20 @@ document
   .querySelector("[data-destroy]")
   .addEventListener("click", destroyBoxes);
 
+
+
+// Başka bir projede bu yöntem lazım olabilir!
+
+  // function createBoxes(amount) {
+//   const boxesContainer = document.getElementById("boxes");
+//   boxesContainer.innerHTML = "";
+
+//   for (let i = 0; i < amount; i++) {
+//     const box = document.createElement("div");
+//     const size = 30 + i * 10; 
+//     box.style.width = `${size}px`;
+//     box.style.height = `${size}px`;
+//     box.style.backgroundColor = getRandomHexColor();
+//     boxesContainer.appendChild(box);
+//   }
+// }
